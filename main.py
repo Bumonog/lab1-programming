@@ -1,22 +1,13 @@
-# Запрос данных с "Защитой от дурака"
-while True:
-    try:
-        num_integer = int(input("Введите целое число:"))
-        break
-    
-    except ValueError:
-        print("Ошибка! Введите целое число!")
-        
-while True:
-    try:
-        num_float = float(input("Введите дробное число:"))
-        break
-    except ValueError:
-        print("Ошибка! Введите дробное число!")
+a, b  = float(input("Введите первое число: ")), float(input("Введите второе число: "))
 
-text = input("Введите строку:")
+print(f'Сумма: {a + b}')
+print(f'Разность: {a - b}')
+print(f'ПРоизведение: {a * b}')
+print(f'Деление(2 знака после запятой): {a / b:.2f}')
+print(f'Целочисленное деление: {a // b}')
+print(f'Остаток: {a % b}')
 
-# Вывод типов данных переменных и их значений
-print(f"Значение: {num_integer}, тип:{type(num_integer).__name__}")
-print(f"Значение:{num_float}, тип:{type(num_float).__name__}")
-print(f"Значение:{text}, тип:{type(text).__name__}")
+try:
+    print(f'Степнь: {a ** b:.2f}')
+except OverflowError:
+    print("Степень: cлишком большой результат.")
