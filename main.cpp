@@ -1,23 +1,19 @@
 #include <iostream>
 #include <iomanip>
-#include <cmath>
 
 int main() {
-    double a, b;
-    std::cout << "Введите первое число: ";
-    std::cin >> a;
-    std::cout << "Введите второе число: ";
-    std::cin >> b;
+    int seconds;
+    std::cout << "Введите кол-во секунд: ";
+    std::cin >> seconds;
 
-    std::cout << std::fixed << std::setprecision(2);
-    std::cout << "Сумма: " << a + b << "\n";
-    std::cout << "Разность: " << a - b << "\n";
-    std::cout << "Произведение: " << a * b << "\n";
-    std::cout << "Деление: " << a /b << "\n";
-    std::cout << "Целочисленное деление: "
-              << static_cast<int>(a) / static_cast<int>(b) << "\n";
-    std::cout << "Остаток: " << std::fmod(a, b) << "\n";
-    std::cout << "Степень: " << std::pow(a, b) << "\n";
+    int hours = seconds / 3600;
+    int minutes = (seconds % 3600) / 60;
+    int ost_seconds = seconds % 60;
+
+    std::cout << std::setfill('0')
+              << std::setw(2) << hours << ":"
+              << std::setw(2) << minutes << ":"
+              << std::setw(2) << ost_seconds << "\n";
 
     return 0;
 }
