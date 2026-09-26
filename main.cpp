@@ -1,19 +1,33 @@
 #include <iostream>
-#include <iomanip>
+#include <string>
+#include <algorithm>
+#include <cctype>
 
 int main() {
-    int seconds;
-    std::cout << "Введите кол-во секунд: ";
-    std::cin >> seconds;
+    std::string text;
+    std::cout << "Введите строку: ";
+    std::getline(std::cin, text);
 
-    int hours = seconds / 3600;
-    int minutes = (seconds % 3600) / 60;
-    int ost_seconds = seconds % 60;
+    std::cout << "Длина: " << text.length() << "\n";
 
-    std::cout << std::setfill('0')
-              << std::setw(2) << hours << ":"
-              << std::setw(2) << minutes << ":"
-              << std::setw(2) << ost_seconds << "\n";
+    // верхний регистр
+    std::string upper = text;
+    std::transform(upper.begin(), upper.end(), upper.begin(),
+                   [](unsigned char c) {return std::toupper(c); });
+    std::cout << "Верхний регистр: " << upper << "\n";
+
+    // нижний регистр
+    std::string lower = text;
+    std::transform(lower.begin(), lower.end(), lower.begin(),
+                    [](unsigned char c) { return std::tolower(c); });
+    std::cout << "Нижний регистр: " << lower << "\n";
+
+    std::cout << "Первый символ: " << text.front() << "\n";
+    std::cout << "Последний символ: " << text.back() << "\n";
+
+    //подсчитываем побелы
+    int spaces = std::count(text.begin(), text.end(), ' ');
+    std::cout << "Количество пробелов: " << spaces << "\n";
 
     return 0;
 }
