@@ -1,29 +1,23 @@
 #include <iostream>
-#include <string>
-#include <typeinfo>
+#include <iomanip>
+#include <cmath>
 
 int main() {
-    int num_int;
-    double num_float;
-    std::string text;
+    double a, b;
+    std::cout << "Введите первое число: ";
+    std::cin >> a;
+    std::cout << "Введите второе число: ";
+    std::cin >> b;
 
-    std::cout << "Введите число: ";
-    std::cin >> num_int;
-
-    std::cout << "Введите дробное число: ";
-    std::cin >> num_float;
-
-    std::cin.ignore(); // очистил буфер
-
-    std::cout << "Введите строку: ";
-    std::getline(std::cin, text);
-
-    std::cout << "Значение: " << num_int
-              << ", тип: " << typeid(num_int).name() << "\n";
-    std::cout << "Значение: " << num_float
-              << ", тип: " << typeid(num_float).name() << "\n";
-    std::cout << "Значение: " << text
-              << ", тип: " << typeid(text).name() << "\n";
+    std::cout << std::fixed << std::setprecision(2);
+    std::cout << "Сумма: " << a + b << "\n";
+    std::cout << "Разность: " << a - b << "\n";
+    std::cout << "Произведение: " << a * b << "\n";
+    std::cout << "Деление: " << a /b << "\n";
+    std::cout << "Целочисленное деление: "
+              << static_cast<int>(a) / static_cast<int>(b) << "\n";
+    std::cout << "Остаток: " << std::fmod(a, b) << "\n";
+    std::cout << "Степень: " << std::pow(a, b) << "\n";
 
     return 0;
 }
