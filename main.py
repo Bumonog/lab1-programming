@@ -1,11 +1,16 @@
-a = float(input("Введите первое число: "))
-b = float(input("Введите второе число: "))
-c = float(input("Введите третье число: "))
+print("""Конвертер температур
+      1. Из °C в °F
+      2. Из °F в °C""")
 
-average = (a + b + c) / 3
-minimum = min(a, b, c)
-maximum = max(a, b, c)
+choice = int(input("Ваш выбор(введите 1/2): "))
 
-print(f"Среднее арифметическое: {average:.2f}")
-print(f"Минимум: {minimum}")
-print(f"Максимум: {maximum}")
+if choice == 1:
+    celsius = float(input("Введите температуру в °C: "))
+    fathrenheit = celsius * 9/5 + 32
+    print(f"{celsius:.1f}°C = {fathrenheit:.1f}°F")
+elif choice == 2:
+    fathrenheit = float(input("Введите температуру в °F: "))
+    celsius = (fathrenheit - 32) * 5/9
+    print(f"{fathrenheit:.1f}°F = {celsius:.1f}°C")
+else:
+    print("Некорректный ввод.")
