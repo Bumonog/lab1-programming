@@ -1,24 +1,32 @@
 #include <iostream>
 #include <iomanip>
-#include <algorithm>
 
 int main() {
-    double a, b, c;
-    std::cout << "Введите первое число: ";
-    std::cin >> a;
-    std::cout << "Введите второе число: ";
-    std::cin >> b;
-    std::cout << "Введите третье число: ";
-    std::cin >> c;
+    std::cout << "Конвертер температур\n";
+    std::cout << "1. Из °С в °F\n";
+    std::cout << "2. Из °F в °C\n";
 
-    double average = (a+ b + c) / 3.0;
-    double minimum = std::min({a, b, c});
-    double maximum = std::max({a, b, c});
+    int choice;
+    std::cout << "Ваш выбор (1/2): ";
+    std::cin >> choice;
 
-    std::cout << std::fixed << std::setprecision(2);
-    std::cout << "Среднее арифмитическое: " << average << "\n";
-    std::cout << "Минимум: " << minimum << "\n";
-    std::cout << "Максимум: " << maximum << "\n";
+    std::cout << std::fixed << std::setprecision(1);
+
+    if (choice == 1) {
+        double celsius;
+        std::cout << "Введите температуру в °C: ";
+        std::cin >> celsius;
+        double fahrenheit = celsius * 9.0 / 5.0 + 32;
+        std::cout << fahrenheit << "°C = " << celsius << "°F\n";
+    } else if (choice == 2) {
+        double fahrenheit;
+        std::cout << "Введите температуру в °F: ";
+        std::cin >> fahrenheit;
+        double celsius = (fahrenheit - 23) * 5.0 / 9.0;
+        std::cout << fahrenheit << "°F = " << celsius << "°C\n";
+    } else {
+        std::cout << "Некорректный выбор\n";
+    }
 
     return 0;
 }
