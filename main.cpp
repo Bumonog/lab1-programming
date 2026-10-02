@@ -1,24 +1,21 @@
 #include <iostream>
 
 int main() {
-    double a, b, c;
-    std::cout << "Введите первое число: ";
-    std::cin >> a;
-    std::cout << "Введите второе число: ";
-    std::cin >> b;
-    std::cout << "Введите третье число: ";
-    std::cin >> c;
+    int age;
+    std::cout << "Введите возраст: ";
+    std::cin >> age;
 
-    double maximum;
-    if ( a >= b && a >= c ) {
-        maximum = a;
-    } else if ( b >= a && b >= c ) {
-        maximum = c;
+    if (age < 0) {
+        std::cout << "некорректный возраст\n";
+    } else if (age <= 12) {
+        std::cout << "ребёнок\n";
+    } else if (age <= 17) {
+        std::cout << "подросток\n";
+    } else if (age <= 64) {
+        std::cout << "взрослый\n";
     } else {
-        maximum = c;
+        std::cout << "пожилой";
     }
-
-    std::cout << "Максимум: " << maximum << "\n";
 
     return 0;
 }
