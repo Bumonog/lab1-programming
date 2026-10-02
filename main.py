@@ -1,9 +1,7 @@
-a = int(input("Введите первое число: "))
-b = int(input("Введите второе число: "))
-c = int(input("Введите третье число: "))
+age = int(input("Введите возраст: "))
 
-if a >= b and a >= c: maximum = a
-elif b>=a and b>=c: maximum = b
-else: maximum = c
-
-print(f"Максимум: {maximum}")
+if age < 0: print("Некорректный возраст.")
+elif age <= 12: print("Ребёнок.")
+elif age <= 17: print("Подросток.")
+elif age <= 64: print("Взорслый")
+else: print("Пожилой.")
