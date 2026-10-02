@@ -1,16 +1,22 @@
-print("""Конвертер температур
-      1. Из °C в °F
-      2. Из °F в °C""")
+print("Это программа для проверки, является ли число палиндромом.")
+Number = int(input('Введите число: '))
+num = Number
+count = 0
 
-choice = int(input("Ваш выбор(введите 1/2): "))
+while num > 0:
+    count += 1
+    num //= 10
 
-if choice == 1:
-    celsius = float(input("Введите температуру в °C: "))
-    fathrenheit = celsius * 9/5 + 32
-    print(f"{celsius:.1f}°C = {fathrenheit:.1f}°F")
-elif choice == 2:
-    fathrenheit = float(input("Введите температуру в °F: "))
-    celsius = (fathrenheit - 32) * 5/9
-    print(f"{fathrenheit:.1f}°F = {celsius:.1f}°C")
+for i in range(count):
+    first = Number // 10**(count-i-1)   # Получаем первую цифру
+    last = Number % 10                  # Получаем последнюю цифру
+    Number -= first * 10**(count-i-1)   # Удаляем первую цифру
+    Number //= 10                       # Удаляем последнюю цифру
+    count -= 1 
+    if first != last: 
+        print('Не палиндром')
+        break
 else:
-    print("Некорректный ввод.")
+    print('Палиндром')
+
+print('END')
