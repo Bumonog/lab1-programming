@@ -1,15 +1,24 @@
 #include <iostream>
 
 int main() {
-    int num;
-    std::cout << "Введите число: ";
-    std::cin >> num;
+    double a, b, c;
+    std::cout << "Введите первое число: ";
+    std::cin >> a;
+    std::cout << "Введите второе число: ";
+    std::cin >> b;
+    std::cout << "Введите третье число: ";
+    std::cin >> c;
 
-    if (num % 2 == 0) {
-        std::cout << "Число" << num << " - чётное.\n";
+    double maximum;
+    if ( a >= b && a >= c ) {
+        maximum = a;
+    } else if ( b >= a && b >= c ) {
+        maximum = c;
     } else {
-        std::cout << "Число" << num << " - нечётное.\n";
+        maximum = c;
     }
+
+    std::cout << "Максимум: " << maximum << "\n";
 
     return 0;
 }
