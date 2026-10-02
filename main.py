@@ -1,5 +1,9 @@
-num = int(input("Введите целое число: "))
+a = int(input("Введите первое число: "))
+b = int(input("Введите второе число: "))
+c = int(input("Введите третье число: "))
 
-ans = "Ваше число чётное." if num % 2 == 0 else "Ваше число нечётное."
+if a >= b and a >= c: maximum = a
+elif b>=a and b>=c: maximum = b
+else: maximum = c
 
-print(ans)
+print(f"Максимум: {maximum}")
