@@ -1,31 +1,14 @@
 #include <iostream>
-#include <iomanip>
 
 int main() {
-    std::cout << "Конвертер температур\n";
-    std::cout << "1. Из °С в °F\n";
-    std::cout << "2. Из °F в °C\n";
+    int num;
+    std::cout << "Введите число: ";
+    std::cin >> num;
 
-    int choice;
-    std::cout << "Ваш выбор (1/2): ";
-    std::cin >> choice;
-
-    std::cout << std::fixed << std::setprecision(1);
-
-    if (choice == 1) {
-        double celsius;
-        std::cout << "Введите температуру в °C: ";
-        std::cin >> celsius;
-        double fahrenheit = celsius * 9.0 / 5.0 + 32;
-        std::cout << fahrenheit << "°C = " << celsius << "°F\n";
-    } else if (choice == 2) {
-        double fahrenheit;
-        std::cout << "Введите температуру в °F: ";
-        std::cin >> fahrenheit;
-        double celsius = (fahrenheit - 23) * 5.0 / 9.0;
-        std::cout << fahrenheit << "°F = " << celsius << "°C\n";
+    if (num % 2 == 0) {
+        std::cout << "Число" << num << " - чётное.\n";
     } else {
-        std::cout << "Некорректный выбор\n";
+        std::cout << "Число" << num << " - нечётное.\n";
     }
 
     return 0;
