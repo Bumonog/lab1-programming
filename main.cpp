@@ -1,34 +1,14 @@
 #include <iostream>
-#include <iomanip>
-#include <cmath>
 
 int main() {
-    double a, b, c;
-    std::cout << "Введите a: ";
-    std::cin >> a;
-    std::cout << "Введите b: ";
-    std::cin >> b;
-    std::cout << " Введите c: ";
-    std::cin >> c;
+    int year;
+    std::cout << "Введите год: ";
+    std::cin >> year;
 
-    if (a == 0) {
-        std::cout << "Это не квадратное уравнение.\n";
+    if ( (year % 4 == 0 && year%100 != 0) || (year % 400 == 0) ) {
+        std::cout << year << " - високосный год\n";
     } else {
-        double D = b*b - 4*a*c;
-
-        std::cout << std::fixed <<std::setprecision(2);
-
-        if (D>0) {
-            double x1 = ( -b + std::sqrt(D) ) / (2*a);
-            double x2 = (-b - std::sqrt(D)) / (2*a);
-            std::cout << "Два корня: x1 = " << x1
-                      << ", x2 = " << x2 << "\n";
-        } else if (D == 0) {
-            double x = (-b) / (2*a);
-            std::cout << "Один корень: x = " << x << "\n";
-        } else {
-            std::cout << "Нет действительных корней.\n";
-        }
+        std::cout << year << " - не вмсокосный год\n";
     }
 
     return 0;
