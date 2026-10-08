@@ -1,9 +1,16 @@
-a = float(input("Введите сторону a: "))
-b = float(input("Введите сторону b: "))
-c = float(input("Введите сторону c: "))
+a = float(input("Введите первое число: "))
+b = float(input("Введите второе число: "))
+operation = input("Введите операцию(+, -, *, /): ").strip()
 
-if a + b > c and a + c > b and b + c > a:
-    if a == b == c: print("Равносторонний треугольник")
-    elif a == b or a == c or b == c: print("Равнобедренный треугольник")
-    else: print("Разносторонний треугольник")
-else: print("Треуголльник не существует")
+match operation:
+    case "+":
+        print(f"Результат: {a + b}")
+    case "-":
+        print(f"Результат: {a - b}")
+    case "*":
+        print(f"Резуьтат: {a * b}")
+    case "/":
+        if b==0: print("Ошибка: на ноль делить нельзя.")
+        else: print(f"Результат: {a/b:.2f}")
+    case _:
+        print("Неизвестная операция")
