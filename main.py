@@ -1,6 +1,14 @@
-year = int(input("Введите год: "))
+a = float(input("Введите первое число: "))
+b = float(input("Введите второе число: "))
+operation = input("Введите операцию(+, -, *, /): ").strip()
 
-if ( year % 4 == 0 and year%100 != 0 ) or ( year % 400 == 0):
-    print(f"{year} - високосный")
-else:
-    print(f"{year} - не високосный")
+match operation:
+    case "+":
+        print(f"Результат: {a + b}")
+    case "-":
+        print(f"Результат: {a - b}")
+    case "*":
+        print(f"Резуьтат: {a * b}")
+    case "/":
+        if b==0: print("ОшибкаЖ на ноль делить нельзя.")
+        else: print(f"Результат: {a/b:.2f}")
