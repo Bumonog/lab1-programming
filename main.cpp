@@ -1,14 +1,24 @@
 #include <iostream>
 
 int main() {
-    int year;
-    std::cout << "Введите год: ";
-    std::cin >> year;
+    double a, b, c;
+    std::cout << "Введите сторону a: ";
+    std::cin >> a;
+    std::cout << "Введите сторону b: ";
+    std::cin >> b;
+    std::cout << "Введите сторону c: ";
+    std::cin >> c;
 
-    if ( (year % 4 == 0 && year%100 != 0) || (year % 400 == 0) ) {
-        std::cout << year << " - високосный год\n";
+    if ( a + b > c && a + c > b && b + c > a ) {
+        if (a == b && b == c) {
+            std::cout << "Равносторонний треугольник\n";
+        } else if (a == b || a == c || b == c) {
+            std::cout << "Равнобедренный треугольник\n";
+        } else {
+            std::cout << "Разносторонний треугольник\n";
+        }
     } else {
-        std::cout << year << " - не вмсокосный год\n";
+        std::cout << "Треугольник не существует\n";
     }
 
     return 0;
