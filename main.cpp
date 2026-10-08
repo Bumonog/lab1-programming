@@ -1,24 +1,37 @@
 #include <iostream>
+#include <iomanip>
 
 int main() {
-    double a, b, c;
-    std::cout << "Введите сторону a: ";
+    double a, b;
+    char operation;
+    std::cout << "Введите первое число: ";
     std::cin >> a;
-    std::cout << "Введите сторону b: ";
+    std::cout << "Введите второе число: ";
     std::cin >> b;
-    std::cout << "Введите сторону c: ";
-    std::cin >> c;
+    std::cout << "Введите операцию(+, -, *, /): ";
+    std::cin >> operation;
 
-    if ( a + b > c && a + c > b && b + c > a ) {
-        if (a == b && b == c) {
-            std::cout << "Равносторонний треугольник\n";
-        } else if (a == b || a == c || b == c) {
-            std::cout << "Равнобедренный треугольник\n";
-        } else {
-            std::cout << "Разносторонний треугольник\n";
-        }
-    } else {
-        std::cout << "Треугольник не существует\n";
+    std::cout << std::fixed << std::setprecision(2);
+
+    switch (operation) {
+        case '+':
+            std::cout << "Результат: " << a + b << "\n";
+            break;
+        case '-':
+            std::cout << "Результат: " << a - b << "\n";
+            break;
+        case '*':
+            std::cout << "Результат: " << a * b << "\n";
+            break;
+        case '/':
+            if (b == 0) {
+                std::cout << "Ошибка: на ноль делить нельзя\n";
+            } else {
+                std::cout << "Резульат: " << a / b << "\n";
+            }
+            break;
+        default:
+            std::cout << "Неизвестная операция\n";
     }
 
     return 0;
