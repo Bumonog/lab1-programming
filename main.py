@@ -1,16 +1,8 @@
-a = float(input("Введите первое число: "))
-b = float(input("Введите второе число: "))
-operation = input("Введите операцию(+, -, *, /): ").strip()
+mail = input("Введтите адрес электронной почты: ")
+mail1 = mail
+mail1 = mail1.replace("@", "@ ").split()
 
-match operation:
-    case "+":
-        print(f"Результат: {a + b}")
-    case "-":
-        print(f"Результат: {a - b}")
-    case "*":
-        print(f"Резуьтат: {a * b}")
-    case "/":
-        if b==0: print("Ошибка: на ноль делить нельзя.")
-        else: print(f"Результат: {a/b:.2f}")
-    case _:
-        print("Неизвестная операция")
+if mail.count("@") == 1 and mail1[1].count(".") == 1:
+    print(f"{mail} - валидный адрес электронной почты")
+else:
+    print(f"{mail} - невалидный адрес электронной почты")
