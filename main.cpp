@@ -1,19 +1,23 @@
 #include <iostream>
-#include <cmath>
-#include <iomanip>
 
 int main() {
-    std::cout << std::setw(8) << "x"
-              << std::setw(10) << "sin(x)" << "\n";
-    std::cout << std::string(20, '-') << "\n";
+    int n;
+    std::cout << "Введите целое число: ";
+    std::cin >> n;
 
-    std::cout << std::fixed << std::setprecision(4);
+    long long sumNumbers = 0;
+    long long product = 1;
+    long long sumSquares = 0;
 
-    for (int i = 0; i <= 10; ++i) {
-        double x = i * M_PI / 10;
-        double y = std::sin(x);
-        std::cout << std::setw(8) << x
-                  << std::setw(10) << y << "\n";
+    for (int i = 1; i <= n; ++i) {
+        sumNumbers += i;
+        product *= i;
+        sumSquares += i * i;
     }
-    return 0
+
+    std::cout << "Сумма: " << sumNumbers << "\n";
+    std::cout << "Произведение(N!): " << product << "\n";
+    std::cout << "Сумма квадратов: " << sumSquares << "\n";
+
+    return 0;
 }
