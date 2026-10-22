@@ -1,14 +1,8 @@
-N = int(input("Введите целое число: "))
+n = int(input("Введите целое число N: "))
 
-sum_numbers = 0
-product = 1
-sum_squares = 0
+a, b = 0, 1
 
-for i in range(1,N+1):
-    sum_numbers += i
-    product *= i
-    sum_squares += i**2
-    
-print(f"Сумма чисел: {sum_numbers}")
-print(f"Произведение(N!): {product}")
-print(f"Сумма квадратов чисел: {sum_squares}")
+print(f"Первые {n} чисел ФИбоначчи: ")
+for i in range(n):
+    print(a, end=' ')
+    a, b = b, a + b
