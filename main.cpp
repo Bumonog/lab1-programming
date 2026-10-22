@@ -1,20 +1,32 @@
 #include <iostream>
+#include <vector>
 
 int main() {
     int n;
-    std::cout << "Введите N: ";
+    std::cout << "Введите число: ";
     std::cin >> n;
 
-    long long a = 0, b = 1;
+    int original = n;
+    std::vector<int> factors;
 
-    std::cout << "Первые " << n << " чисел Фибоначчи:\n";
-    for (int i = 0; i < n; ++i) {
-        std::cout << a << " ";
-        long long temp = a + b;
-        a = b;
-        b = temp;
+    for (int divisor = 2; divisor * divisor <= n; ++divisor) {
+        while (n % divisor == 0) {
+            factors.push_back(divisor);
+            n /= divisor;
+
+        }
     }
-    std::cout << "\n";
+
+    if (n > 1) {
+        factors.push_back(n);
+
+    }
+    std::cout << original << " = ";
+    for (size_t i = 0; i < factors.size(); ++i) {
+        if (i > 0) std::cout << " x ";
+        std::cout << factors[i];
+    }
+    std::cout << '\n';
 
     return 0;
 }
