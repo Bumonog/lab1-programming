@@ -1,9 +1,14 @@
-import math
+N = int(input("Введите целое число: "))
 
-print(f"{'X':>8} {'sin(x)':>10}")
-print('-' * 28)
+sum_numbers = 0
+product = 1
+sum_squares = 0
 
-for i in range(1,11):
-    x = i * math.pi/10
-    y = math.sin(x)
-    print(f"{x:8.4} {y:10}")
+for i in range(1,N+1):
+    sum_numbers += i
+    product *= i
+    sum_squares += i**2
+    
+print(f"Сумма чисел: {sum_numbers}")
+print(f"Произведение(N!): {product}")
+print(f"Сумма квадратов чисел: {sum_squares}")
