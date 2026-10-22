@@ -1,8 +1,16 @@
-n = int(input("Введите целое число N: "))
+n = int(input("Введите число: "))
+original = n
+factors = []
 
-a, b = 0, 1
-
-print(f"Первые {n} чисел ФИбоначчи: ")
-for i in range(n):
-    print(a, end=' ')
-    a, b = b, a + b
+divisor = 2
+while divisor**2 <= n:
+    while n % divisor == 0:
+        factors.append(divisor)
+        n //= divisor
+    divisor += 1
+    
+if n > 1:
+    factors.append(n)
+    
+print(f"{original} = {' x '.join(map(str, factors))}")
+        
