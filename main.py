@@ -1,13 +1,23 @@
-n = int(input("Введите число: "))
-original = n
-reversed_num = 0
+n = 5
 
-while n > 0:
-    digit = n % 10
-    reversed_num = reversed_num*10 + digit
-    n //= 10
+# rectangle
+print("Rectangle:")
+for i in range(n):
+    print("*" * n)
     
-if original == reversed_num:
-    print(f"{original} - палиндром")
-else:
-    print(f"{original} - не палиндром")
+# triangle
+print("\nTriangle:")
+for i in range(1, n+1):
+    print("*" * i)
+    
+# Christmas tree
+print("\nChristmas tree:")
+for i in range(1, n+1):
+    print( " " * (n - i) + "*" * (2*i-1) )
+    
+# romb
+print("\nRomb:")
+for i in range(1, n+1):
+    print( ' '*(n-i) + "*"*(2*i-1) )
+for i in range(n-1, 0, -1):
+    print(' '*(n-i) + "*"*(2*i-1))
