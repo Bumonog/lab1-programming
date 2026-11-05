@@ -1,18 +1,9 @@
-import random
+numbers = [1, 2, 3 ,2, 4, 5, 1, 6, 3, 7]
 
-N = int(input("Введите N: "))
-numbers = [random.randint(1, 100) for _ in range(N)]
-
-print(f"Исходный список чисел: {numbers}")
-print(f"Сумма: {sum(numbers)}")
-print(f"Среднее значение: {sum(numbers) / N}")
-print(f"Минимальное значение: {min(numbers)}")
-print(f"Максимальное значение: {max(numbers)}")
-
-#сортировка списка
-numbers.sort()
-print(f"Отсортированный список чисел: {numbers}")
-
-#удаление дубликатов (с сохранением порядка)
-unique = list(dict.fromkeys(numbers))
-print(f"Список без дубликатов: {unique}")
+# поиск дубликатов
+numbers1 = set(numbers)        # множество без повторяющихся чисел
+for num in numbers1:
+    count = numbers.count(num)
+    if count > 1:
+        print(f"Число {num} повторяется {count} раз(a).")
+    
