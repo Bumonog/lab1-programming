@@ -12,7 +12,7 @@ while valid == False:
         print(f"| {"Вы ввели некорректные данные":^47}|")
         print('-'*50)
     
-numbers = sorted(numbers)
+numbers.sort()
 
 # находим медиану
 
