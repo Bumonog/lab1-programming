@@ -1,6 +1,18 @@
-numbers = input("Введите числа через запятую (например: 2, 5, 67, 52): ")
-numbers = numbers.split(', ')
-numbers = sorted([int(num) for num in numbers])
+valid = False
+while valid == False:
+    try:
+        numbers = list(float(num) for num in input("Введите числа через пробел:").split())
+        
+        if len(numbers) == 0:
+            raise ValueError
+        
+        break
+    except ValueError:
+        print('-'*50)
+        print(f"| {"Вы ввели некорректные данные":^47}|")
+        print('-'*50)
+    
+numbers = sorted(numbers)
 
 # находим медиану
 
