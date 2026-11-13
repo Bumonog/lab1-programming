@@ -1,17 +1,20 @@
-def is_palindrome(*, text: str) -> bool:
-    for char in ",./?'\";:!@#$%^&*()_+=-[] `~<>":
-        text = text.replace(char, '')
-    text = text.lower()
-    return text == text[::-1]
+def caesar_ciper(*, text: str, shift: int) -> str:
+    """Шифруем текст шифром Цезаря"""
+    
+    result = list()
+    for char in text:
+        if char.isalpha():
+            base = ord('A') if char.isupper() else ord('a')
+            shifted = (ord(char) - base + shift) % 26 + base
+            result.append(chr(shifted))
+        else:
+            result.append(char)
+    
+    return ''.join(result)
 
-test_text = [
-    "А роза упала на лапу Азора",
-    "Madam, I'm Adam",
-    "Hello, world!",
-    "12321",
-    "racecar"
-]
+original = "Hello, World!"
+encrypted = caesar_ciper(text = original, shift = 3)
 
-for text in test_text:
-    result = "palindrome" if is_palindrome(text=text) else "not polindrome"
-    print(f"{text} - {result}")
+print(f"Original text: {original}")
+print(f"Encrypted text: {encrypted}")
+        
